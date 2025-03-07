@@ -13,5 +13,5 @@ function twoSum(nums: number[], target: number) {
   return []
 }
 
-const res = twoSum([4, 3, 2], 6)
-console.log(res)
+const result = twoSum([4, 3, 2], 6)
+console.log(result)
