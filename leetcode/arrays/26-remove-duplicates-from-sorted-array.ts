@@ -17,6 +17,26 @@ function removeDuplicates(nums: number[]) {
   return uniqueCount;
 }
 
-const res = removeDuplicates([1, 1, 2, 3, 3, 4])
+function removeDuplicatesOptimised(nums: number[]) {
+  if (nums.length === 0) return 0;
+
+  let pointer = 0;
+  let uniqueCount = 1
+
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] !== nums[pointer] ) {
+      pointer++;
+      //pointer = nums[i]
+      nums[pointer] = nums[i];
+      uniqueCount++;
+    }
+  }
+
+  console.log("final array:", nums)
+
+  return uniqueCount;
+}
+
+const res = removeDuplicatesOptimised([1, 1, 2, 3, 3, 4])
 
 console.log(res)
