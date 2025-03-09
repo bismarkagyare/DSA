@@ -20,23 +20,18 @@ function removeDuplicates(nums: number[]) {
 function removeDuplicatesOptimised(nums: number[]) {
   if (nums.length === 0) return 0;
 
-  let pointer = 0;
-  let uniqueCount = 1
+  let lastUniqueIndex = 0;
 
   for (let i = 1; i < nums.length; i++) {
-    if (nums[i] !== nums[pointer] ) {
-      pointer++;
-      //pointer = nums[i]
-      nums[pointer] = nums[i];
-      uniqueCount++;
+    if (nums[i] !== nums[lastUniqueIndex]) {
+      lastUniqueIndex ++;
+      nums[lastUniqueIndex] = nums[i]
     }
   }
 
-  console.log("final array:", nums)
-
-  return uniqueCount;
+  return lastUniqueIndex + 1
 }
 
-const res = removeDuplicatesOptimised([1, 1, 2, 3, 3, 4])
+const res = removeDuplicatesOptimised([1, 2, 3, 3, 4])
 
 console.log(res)
