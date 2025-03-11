@@ -14,6 +14,7 @@ function containsDuplicate(nums: number[]) {
   return false;
 }
 
+// using hashmaps: time complexity of O(N)
 function containsDuplicateOptimised(nums: number[]) {
   if (nums.length === 0) return false;
 
