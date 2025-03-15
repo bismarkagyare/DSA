@@ -31,5 +31,3 @@ function containsDuplicateOptimised(nums: number[]) {
   return false;
 }
 
-const solution = containsDuplicateOptimised([1, 2, 3, 4, 1]);
-console.log(solution);
