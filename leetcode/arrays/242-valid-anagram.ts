@@ -1,31 +1,29 @@
 // Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 
 function isAnagram(s: string, t: string) {
-  const sMap = new Map()
-  const tMap = new Map()
+  if (s.length !== t.length) return false
 
-  let sCount = 0
-  let tCount = 0
+  //create hashmaps to count frequencies
+  const sMap = new Map<string, number>()
+  const tMap = new Map<string, number>()
 
-  for (let i = 0; i < s.length; i++) {
-    if (sMap.has(s[i])) {
-      sCount ++
-    } else {
-      sMap.set(s[i], 1)
+  //count characters in s string
+  for (let char of s) {
+    sMap.set(char, (sMap.get(char) || 0) + 1)
+  }
+
+  for (let char of t) {
+    tMap.set(char, (tMap.get(char) || 0) + 1)
+  }
+
+  //compare the two hashmaps
+  for (let [key, value] of sMap) {
+    if (tMap.get(key) !== value) {
+      return false // frequencies do not match
     }
   }
 
-  for (let j = 0; j < t.length; j++) {
-    if (tMap.has(t[j])) {
-      tCount++
-    } else {
-      tMap.set(t[j], 1)
-    }
-  }
-
-
-  console.log("sMAP: ", sMap)
-  console.log("tMAP: ", tMap)
+  return true
 }
 
 const solution = isAnagram("silent", "lentsi")
