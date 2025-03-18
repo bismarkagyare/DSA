@@ -5,6 +5,10 @@
 //Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
 
 function groupAnagrams(strs: string[]) : string[][] {
+  if (strs.length === 0) return []
+
+  if (strs.length === 1) return [[strs[0]]]
+
   const hashMap = new Map<string, string[]>();
 
   for (let word of strs) {
