@@ -26,5 +26,5 @@ function isAnagram(s: string, t: string): boolean {
   return true
 }
 
-const solution = isAnagram("silent", "jentsi")
-console.log(solution)
+// const solution = isAnagram("silent", "jentsi")
+// console.log(solution)
