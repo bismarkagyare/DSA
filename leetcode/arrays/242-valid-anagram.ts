@@ -1,6 +1,6 @@
 // Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 
-function isAnagram(s: string, t: string) {
+function isAnagram(s: string, t: string): boolean {
   if (s.length !== t.length) return false
 
   //create hashmaps to count frequencies
