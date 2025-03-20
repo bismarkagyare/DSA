@@ -3,7 +3,7 @@
 // create a hashmap to count frequencies
 
 
-function topKFrequent(nums: number[], k?: number) {
+function topKFrequent(nums: number[], k: number) {
   const frequencyMap = new Map()
 
   for (let num of nums) {
@@ -12,12 +12,21 @@ function topKFrequent(nums: number[], k?: number) {
 
   const buckets: number[][] = Array(nums.length + 1).fill(null).map(() => [])
 
-  console.log(buckets)
+  for (const [num, freq] of frequencyMap.entries()) {
+    buckets[freq].push(num)
+  }
 
-  return frequencyMap
+  const result: number[] = []
+
+  for (let i = buckets.length - 1; i >= 0 && result.length < k; i--) {
+    for (const num of buckets[i]) {
+      result.push(num)
+      if (result.length === k) break;
+    }
+  }
+
+  return result
 }
 
-const solu = topKFrequent([1, 2, 2, 2, 3, 3, 4])
-console.log("frequencyMap", solu)
-console.log(solu.entries())
-console.log(solu.values())
+const solu = topKFrequent([1, 2, 2, 2, 3, 3, 4], 2)
+console.log("result: ", solu)
