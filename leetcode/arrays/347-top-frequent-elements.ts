@@ -4,7 +4,7 @@
 
 
 function topKFrequent(nums: number[], k: number) {
-  const frequencyMap = new Map()
+  const frequencyMap = new Map<number, number>()
 
   for (let num of nums) {
     frequencyMap.set(num, (frequencyMap.get(num) || 0) + 1)
