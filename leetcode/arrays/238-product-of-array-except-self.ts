@@ -10,7 +10,10 @@ function productExceptSelf(nums: number[]) {
     leftProduct = leftProduct * nums[i]
   }
 
-  
+  for (let i = answer.length - 1; i >= 0; i--) {
+    answer[i] = answer[i] * rightProduct
+    rightProduct = rightProduct * nums[i]
+  }
 
   return answer
 }
