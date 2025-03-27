@@ -28,5 +28,5 @@ function topKFrequent(nums: number[], k: number) {
   return result
 }
 
-const solu = topKFrequent([1, 2, 2, 2, 3, 3, 4], 2)
+const solu = topKFrequent([1, 2, 2, 2, 3, 3], 2)
 console.log("result: ", solu)
