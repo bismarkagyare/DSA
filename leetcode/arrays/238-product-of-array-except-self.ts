@@ -1,6 +1,8 @@
 //Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
 
 function productExceptSelf(nums: number[]) {
+  if (nums.length === 0) return []
+
   const answer = Array(nums.length).fill(1)
   let leftProduct = 1
   let rightProduct = 1
