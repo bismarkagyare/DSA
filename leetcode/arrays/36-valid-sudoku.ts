@@ -5,5 +5,9 @@
 //Each of the nine 3 x 3 sub-boxes of the grid must contain the digits 1-9 without repetition.
 
 function isValidSudoku(board: string[][]) {
+  const rowSet = new Set()
+  const columnSet = new Set()
+  const boxSet = new Set()
+
   
 }
