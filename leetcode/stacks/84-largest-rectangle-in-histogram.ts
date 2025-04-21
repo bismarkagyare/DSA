@@ -22,6 +22,3 @@ function largestRectangleArea(heights: number[]) {
 
   return maxArea
 }
-
-const n = largestRectangleArea([2, 1, 5, 6, 2, 3])
-console.log(n)
