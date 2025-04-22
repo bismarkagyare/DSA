@@ -48,7 +48,7 @@ function searchMatrixOptimised(matrix: number[][], target: number): boolean {
     else end = mid - 1;
   }
 
-  return false;
+  return false
 }
 
 
