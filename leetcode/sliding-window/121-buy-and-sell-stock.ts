@@ -24,5 +24,3 @@ function maxProfit(prices: number[]): number {
 
 const max = maxProfit([7, 1, 5, 3, 6, 4]);
 console.log(max);
-
-//[1, 2, 3, 4, 5]
