@@ -6,6 +6,7 @@ function lengthOfLongestSubstring(s: string): number {
   for (let right = 0; right < s.length; right++) {
     const currentChar = s[right]
 
+    //if the char is found, its a duplicate and we shrink the window
     while(seen.has(currentChar)) {
       seen.delete(s[left])
       left++
