@@ -1,3 +1,5 @@
+//Given a string s, find the length of the longest substring without duplicate characters.
+
 function lengthOfLongestSubstring(s: string): number {
   let left = 0
   let maxLength = 0
