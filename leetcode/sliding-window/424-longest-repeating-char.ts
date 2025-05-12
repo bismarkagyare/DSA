@@ -11,5 +11,22 @@ function characterReplacement(s: string, k: number): number {
   for (let right = 0; right < s.length; right++) {
     const char = s[right]
     count[char] = (count[char] || 0) + 1
+
+    maxCharCount = Math.max(maxCharCount, count[char])
+
+    const windowSize = right - left + 1
+
+    if (windowSize - maxCharCount > k) {
+      const leftChar = s[left]
+      count[leftChar]--
+      left++
+    }
+
+    maxLength = Math.max(maxLength, right - left + 1)
   }
+
+  return maxLength
 };
+
+const longest = characterReplacement("AABABBA", 1)
+console.log(longest)
