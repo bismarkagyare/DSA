@@ -3,30 +3,29 @@
 //Return the length of the longest substring containing the same letter you can get after performing the above operations.
 
 function characterReplacement(s: string, k: number): number {
-  const count: Record<string, number> = {}
-  let left = 0
-  let maxLength = 0
-  let maxCharCount = 0
+  const count: Record<string, number> = {};
+  let left = 0;
+  let maxLength = 0;
+  let maxCharCount = 0;
 
   for (let right = 0; right < s.length; right++) {
-    const char = s[right]
-    count[char] = (count[char] || 0) + 1
+    const char = s[right];
+    count[char] = (count[char] || 0) + 1;
 
-    maxCharCount = Math.max(maxCharCount, count[char])
+    maxCharCount = Math.max(maxCharCount, count[char]);
 
-    const windowSize = right - left + 1
+    const windowSize = right - left + 1;
 
     if (windowSize - maxCharCount > k) {
-      const leftChar = s[left]
-      count[leftChar]--
-      left++
+      const leftChar = s[left];
+      count[leftChar]--;
+      left++;
     }
 
-    maxLength = Math.max(maxLength, right - left + 1)
+    maxLength = Math.max(maxLength, right - left + 1);
   }
 
-  return maxLength
-};
-
-const longest = characterReplacement("AABABBA", 1)
-console.log(longest)
+  return maxLength;
+}
+const longest = characterReplacement("AABABBA", 1);
+console.log(longest);
