@@ -39,7 +39,17 @@ function checkInclusion(s1: string, s2: string) {
 
 };
 
+function isEqualMap(a: Map<string, number>, b: Map<string, number>) {
+  if (a.size !== b.size) return false
 
+  for (const [key, val] of a) {
+    if (b.get(key) !== val) {
+      return false
+    }
+  }
+
+  return true
+}
 
 const perm = checkInclusion("ab", "eidbaooo")
 console.log(perm)
